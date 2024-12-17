@@ -1,4 +1,4 @@
-# Official-Joke-API
+# Official-Joke-API-Challenge by Armando Regalado
 The objective of this challenge is not necessarily just to solve the problem - but to evaluate your software development skills, code quality, creativity, and resourcefulness as a potential future colleague. Please share the necessary artifacts you would provide to your colleagues in a real-world professional setting.
 
 ## Project Overview
