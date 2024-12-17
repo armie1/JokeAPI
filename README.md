@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Official-Joke-API
+The objective of this challenge is not necessarily just to solve the problem - but to evaluate your software development skills, code quality, creativity, and resourcefulness as a potential future colleague. Please share the necessary artifacts you would provide to your colleagues in a real-world professional setting.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+### Technologies:
+* React.js: Base library for building the UI components.
+* Axios: For making API calls to fetch jokes.
+* Bootstrap: For responsive and styled components (buttons, dropdowns, pagination, etc.).
+* Custom CSS: For overriding Bootstrap and enhancing visual styling.
+* React Hooks:
+* useState: For managing component states (jokes, likes, pagination, sorting, etc.).
+* useEffect: For fetching jokes and managing local storage cache.
+* LocalStorage: For caching jokes and remembering likes/dislikes persistently.
+* React Pagination: Custom implementation to navigate through pages.
+* React Context API (Optional): Could be added later for global state management if necessary.
 
-## Available Scripts
 
-In the project directory, you can run:
+### Feature List
+1. Fetch Jokes:
 
-### `npm start`
+* Retrieve jokes dynamically from the Official Joke API.
+* Cache jokes in LocalStorage to improve performance and reduce API calls.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Sort Jokes:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Sort by ID (ascending).
+* Sort by Setup alphabetically.
+* Sort by Likes or Dislikes dynamically.
 
-### `npm test`
+3.  Pagination:
+* Implement custom pagination to show a user-selected number of jokes per page (5, 10, 15, 20).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Add Custom Jokes:
+* Form to add user-defined jokes with setup, punchline, and type.
+* Added jokes are included in the local state and cached for persistence.
 
-### `npm run build`
+5. Rate Jokes:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Upvote (👍) and Downvote (👎) buttons to rate jokes.
+* Ratings (likes/dislikes) persist in the session using state.
+6. Filter Jokes:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Filter jokes by their Type (dropdown selection).
+* Supports dynamic addition of new types based on user input.
+7. Reset Functionality:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Reset Sorting: Clear active sorting and display the filtered list.
+* Reset Cache: Remove cached jokes from LocalStorage and fetch fresh jokes from the API.
+8. Jokes Per Page Selection:
 
-### `npm run eject`
+* Allow users to control the number of jokes displayed per page dynamically using a dropdown.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Project File Structure
+* src/
+* ├── components/
+* │   ├── JokeList.js        # Main component: fetch, display, sort, paginate, and reset jokes
+* │   ├── JokeCard.js        # Displays individual joke with likes/dislikes buttons
+* │   ├── AddJokeForm.js     # Form component to add new jokes with type selection
+* │   ├── Pagination.js      # Custom pagination component
+* │
+* ├── App.js                 # Root component rendering JokeList
+* ├── api.js                 # Fetch jokes from Official Joke API
+* ├── index.css              # Custom global styles (Bootstrap overrides, custom UI enhancements)
+* ├── App.css                # Component-specific styles for JokeList, AddJokeForm, etc.
+* └── index.js               # React entry point
