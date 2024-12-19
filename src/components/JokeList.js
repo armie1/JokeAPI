@@ -68,9 +68,14 @@ const JokeList = () => {
       : jokes;
 
     const sorted = [...baseList].sort((a, b) => {
-      if (key === 'id') return Number(a[key]) - Number(b[key]);
-      if (typeof a[key] === 'string') return a[key].localeCompare(b[key]);
-      return a[key] - b[key];
+      if (key === 'id') {
+        return Number(a[key]) - Number(b[key]); // Orden ascendente para IDs
+      } else if (typeof a[key] === 'string') {
+        return a[key].localeCompare(b[key]); // Orden alfabético para strings
+      } else if (typeof a[key] === 'number') {
+        return b[key] - a[key]; // Orden descendente para números (likes/dislikes)
+      }
+      return 0;
     });
     setFilteredJokes(sorted);
     setCurrentPage(1);
